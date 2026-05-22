@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A1505"/>
+      <stop offset="100%" stop-color="#1A0D03"/>
+    </linearGradient>
+    <linearGradient id="cupGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C47A1E"/>
+      <stop offset="55%" stop-color="#A0520A"/>
+      <stop offset="100%" stop-color="#3D1A05"/>
+    </linearGradient>
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8952A"/>
+      <stop offset="60%" stop-color="#C06010"/>
+      <stop offset="100%" stop-color="#5A2505"/>
+    </linearGradient>
+    <linearGradient id="steamGrad1" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#F5C060" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFF0C0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="steamGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#E8952A" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#FDD88A" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="rayGlow" cx="50%" cy="60%" r="50%">
+      <stop offset="0%" stop-color="#F5A623" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Dark rounded background -->
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)"/>
+
+  <!-- Background glow -->
+  <ellipse cx="256" cy="300" rx="200" ry="140" fill="url(#rayGlow)"/>
+
+  <!-- Sun rays -->
+  <g stroke="#F5A623" stroke-linecap="round" opacity="0.8">
+    <line x1="256" y1="108" x2="256" y2="72"  stroke-width="10"/>
+    <line x1="200" y1="122" x2="178" y2="92"  stroke-width="8"/>
+    <line x1="312" y1="122" x2="334" y2="92"  stroke-width="8"/>
+    <line x1="172" y1="155" x2="142" y2="140" stroke-width="7"/>
+    <line x1="340" y1="155" x2="370" y2="140" stroke-width="7"/>
+    <line x1="160" y1="195" x2="126" y2="188" stroke-width="6" opacity="0.5"/>
+    <line x1="352" y1="195" x2="386" y2="188" stroke-width="6" opacity="0.5"/>
+  </g>
+
+  <!-- Steam wisps -->
+  <path d="M230 215 C222 195 238 178 230 158 C222 138 238 118 230 98"
+        stroke="url(#steamGrad1)" stroke-width="11" fill="none"
+        stroke-linecap="round"/>
+  <path d="M270 205 C280 183 264 165 274 143 C284 121 268 105 278 83"
+        stroke="url(#steamGrad2)" stroke-width="13" fill="none"
+        stroke-linecap="round"/>
+
+  <!-- Cup outer shell -->
+  <path d="M110 240 C108 240 104 244 106 265 L128 390 C131 408 145 418 162 420 L350 420 C367 418 381 408 384 390 L406 265 C408 244 404 240 402 240 Z"
+        fill="#2A1005"/>
+
+  <!-- White double-wall inner ring -->
+  <path d="M140 245 C138 245 135 248 137 264 L156 374 C158 388 168 395 180 397 L332 397 C344 395 354 388 356 374 L375 264 C377 248 374 245 372 245 Z"
+        fill="white" opacity="0.10"/>
+
+  <!-- Liquid interior -->
+  <path d="M148 248 L162 370 C164 383 173 390 184 391 L328 391 C339 390 348 383 350 370 L364 248 Z"
+        fill="url(#liquidGrad)"/>
+
+  <!-- Liquid shine -->
+  <path d="M160 270 L362 270 L360 280 L162 280 Z" fill="#F5B03A" opacity="0.12"/>
+
+  <!-- Cup rim -->
+  <path d="M106 240 Q256 228 406 240 Q404 260 256 252 Q108 260 106 240 Z" fill="#2A1005"/>
+
+  <!-- Handle -->
+  <path d="M392 272 C430 272 458 290 458 320 C458 350 430 368 392 368"
+        stroke="#2A1005" stroke-width="28" fill="none" stroke-linecap="round"/>
+  <path d="M392 272 C426 272 450 290 450 320 C450 350 426 368 392 368"
+        stroke="#3D1A05" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+  <!-- Base -->
+  <ellipse cx="256" cy="418" rx="145" ry="12" fill="#2A1005"/>
+  <ellipse cx="256" cy="416" rx="160" ry="8" fill="#3D1A05" opacity="0.5"/>
+</svg>

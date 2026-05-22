@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 450" width="400" height="450">
+  <defs>
+
+    <!-- Saucer gradient -->
+    <radialGradient id="saucerGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#f0ece8"/>
+      <stop offset="75%" stop-color="#d8d0c8"/>
+      <stop offset="100%" stop-color="#b8b0a8"/>
+    </radialGradient>
+
+    <!-- Saucer rim shadow -->
+    <radialGradient id="saucerRimGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.18)"/>
+    </radialGradient>
+
+    <!-- Cup body gradient (ceramic white) -->
+    <linearGradient id="cupBodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c8c0b8"/>
+      <stop offset="12%" stop-color="#e8e0d8"/>
+      <stop offset="35%" stop-color="#faf8f5"/>
+      <stop offset="55%" stop-color="#ffffff"/>
+      <stop offset="75%" stop-color="#f0ece8"/>
+      <stop offset="100%" stop-color="#c0b8b0"/>
+    </linearGradient>
+
+    <!-- Cup inside gradient -->
+    <linearGradient id="cupInsideGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a09890"/>
+      <stop offset="30%" stop-color="#c8c0b8"/>
+      <stop offset="60%" stop-color="#d8d0c8"/>
+      <stop offset="100%" stop-color="#b0a8a0"/>
+    </linearGradient>
+
+    <!-- Espresso surface gradient -->
+    <radialGradient id="espressoGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#8B5E3C"/>
+      <stop offset="25%" stop-color="#6B3F20"/>
+      <stop offset="55%" stop-color="#4A2810"/>
+      <stop offset="80%" stop-color="#3A1E08"/>
+      <stop offset="100%" stop-color="#2A1205"/>
+    </radialGradient>
+
+    <!-- Crema gradient (golden foam) -->
+    <radialGradient id="cremaGrad" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#D4956A"/>
+      <stop offset="30%" stop-color="#C07840"/>
+      <stop offset="60%" stop-color="#A85E28"/>
+      <stop offset="85%" stop-color="#8B4A18"/>
+      <stop offset="100%" stop-color="#6B3510"/>
+    </radialGradient>
+
+    <!-- Handle gradient -->
+    <linearGradient id="handleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b8b0a8"/>
+      <stop offset="30%" stop-color="#e8e0d8"/>
+      <stop offset="60%" stop-color="#f5f0ec"/>
+      <stop offset="100%" stop-color="#c0b8b0"/>
+    </linearGradient>
+
+    <!-- Drop shadow filter -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="rgba(0,0,0,0.35)"/>
+    </filter>
+
+    <!-- Soft shadow filter -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="2" dy="4" stdDeviation="6" flood-color="rgba(0,0,0,0.2)"/>
+    </filter>
+
+    <!-- Cup shine filter -->
+    <filter id="shine">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+    </filter>
+
+    <!-- Steam blur -->
+    <filter id="steamBlur">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+
+    <!-- Crema texture -->
+    <filter id="cremaTexture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9 0.4" numOctaves="4" result="noise"/>
+      <feColorMatrix type="saturate" values="0.3" in="noise" result="coloredNoise"/>
+      <feBlend in="SourceGraphic" in2="coloredNoise" mode="overlay" result="blended"/>
+      <feComposite in="blended" in2="SourceGraphic" operator="in"/>
+    </filter>
+
+    <!-- Clip path for espresso inside cup -->
+    <clipPath id="espressoClip">
+      <ellipse cx="200" cy="178" rx="72" ry="16"/>
+    </clipPath>
+
+    <!-- Clip path for cup interior -->
+    <clipPath id="cupInteriorClip">
+      <path d="M 128 148 Q 128 178 200 188 Q 272 178 272 148 Z"/>
+    </clipPath>
+
+  </defs>
+
+  <!-- ===================== BACKGROUND ===================== -->
+  <rect width="400" height="450" fill="#f5f0ea"/>
+
+  <!-- Subtle table surface -->
+  <rect x="0" y="360" width="400" height="90" fill="#e8e0d8"/>
+  <line x1="0" y1="362" x2="400" y2="362" stroke="#d0c8c0" stroke-width="1.5"/>
+
+  <!-- ===================== SAUCER SHADOW ===================== -->
+  <ellipse cx="200" cy="358" rx="130" ry="18" fill="rgba(0,0,0,0.22)" filter="url(#steamBlur)"/>
+
+  <!-- ===================== SAUCER ===================== -->
+  <g filter="url(#softShadow)">
+    <!-- Saucer outer rim -->
+    <ellipse cx="200" cy="345" rx="125" ry="22" fill="url(#saucerGrad)"/>
+    <!-- Saucer rim dark edge -->
+    <ellipse cx="200" cy="345" rx="125" ry="22" fill="none" stroke="#b0a8a0" stroke-width="1.5"/>
+    <!-- Saucer inner depression -->
+    <ellipse cx="200" cy="343" rx="85" ry="14" fill="#e8e0d8"/>
+    <ellipse cx="200" cy="343" rx="85" ry="14" fill="none" stroke="#c8c0b8" stroke-width="1"/>
+    <!-- Saucer center platform for cup -->
+    <ellipse cx="200" cy="342" rx="60" ry="10" fill="#f0ece8"/>
+    <!-- Saucer highlight -->
+    <ellipse cx="168" cy="338" rx="28" ry="5" fill="rgba(255,255,255,0.55)" transform="rotate(-10,168,338)"/>
+    <!-- Saucer rim overlay shadow -->
+    <ellipse cx="200" cy="345" rx="125" ry="22" fill="url(#saucerRimGrad)"/>
+  </g>
+
+  <!-- ===================== HANDLE ===================== -->
+  <g filter="url(#softShadow)">
+    <!-- Handle outer shape -->
+    <path d="M 268 220 Q 315 215 318 248 Q 321 278 275 278"
+          fill="none" stroke="url(#handleGrad)" stroke-width="18" stroke-linecap="round"/>
+    <!-- Handle inner cutout illusion -->
+    <path d="M 271 224 Q 308 220 311 249 Q 313 272 272 272"
+          fill="none" stroke="#e8e0d8" stroke-width="8" stroke-linecap="round"/>
+    <!-- Handle shadow side -->
+    <path d="M 270 222 Q 314 218 317 249 Q 319 276 274 276"
+          fill="none" stroke="#b8b0a8" stroke-width="2" stroke-linecap="round"/>
+    <!-- Handle highlight -->
+    <path d="M 270 226 Q 306 222 309 250 Q 311 270 273 270"
+          fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===================== CUP BODY ===================== -->
+  <g filter="url(#dropShadow)">
+
+    <!-- Cup shadow base (dark underside) -->
+    <path d="M 148 330 Q 148 348 200 352 Q 252 348 252 330 L 268 200 Q 268 190 200 188 Q 132 190 132 200 Z"
+          fill="#a09888" opacity="0.3"/>
+
+    <!-- Cup main body -->
+    <path d="M 145 328 Q 145 346 200 350 Q 255 346 255 328 L 270 198 Q 270 188 200 186 Q 130 188 130 198 Z"
+          fill="url(#cupBodyGrad)"/>
+
+    <!-- Cup body left shadow -->
+    <path d="M 145 328 Q 145 346 172 350 L 148 198 Q 145 190 148 192 Z"
+          fill="rgba(0,0,0,0.12)"/>
+
+    <!-- Cup body right shadow -->
+    <path d="M 255 328 Q 255 346 228 350 L 252 198 Q 255 190 252 192 Z"
+          fill="rgba(0,0,0,0.08)"/>
+
+    <!-- Cup body outline -->
+    <path d="M 145 328 Q 145 346 200 350 Q 255 346 255 328 L 270 198 Q 270 188 200 186 Q 130 188 130 198 Z"
+          fill="none" stroke="#b8b0a8" stroke-width="1"/>
+
+    <!-- Cup highlight (specular reflection) -->
+    <path d="M 158 210 Q 155 260 158 315"
+          fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="5" stroke-linecap="round"
+          filter="url(#shine)"/>
+    <path d="M 163 212 Q 160 258 163 312"
+          fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Secondary soft highlight -->
+    <path d="M 172 208 Q 169 250 171 300"
+          fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round"/>
+
+  </g>
+
+  <!-- ===================== CUP RIM ===================== -->
+  <!-- Rim top (ellipse opening) -->
+  <ellipse cx="200" cy="192" rx="70" ry="14" fill="url(#cupInsideGrad)"/>
+  <!-- Rim highlight -->
+  <ellipse cx="185" cy="188" rx="32" ry="5" fill="rgba(255,255,255,0.6)" transform="rotate(-8,185,188)"/>
+  <!-- Rim outer edge -->
+  <ellipse cx="200" cy="192" rx="70" ry="14" fill="none" stroke="#c0b8b0" stroke-width="1.5"/>
+  <!-- Rim inner shadow -->
+  <ellipse cx="200" cy="193" rx="62" ry="11" fill="#a09890" opacity="0.4"/>
+
+  <!-- ===================== ESPRESSO LIQUID ===================== -->
+  <!-- Espresso deep base -->
+  <ellipse cx="200" cy="200" rx="60" ry="10" fill="#2A1205"/>
+
+  <!-- Espresso surface -->
+  <ellipse cx="200" cy="198" rx="60" ry="10" fill="url(#espressoGrad)"/>
+
+  <!-- Crema (espresso foam layer) -->
+  <ellipse cx="200" cy="196" rx="58" ry="9.5" fill="url(#cremaGrad)" filter="url(#cremaTexture)"/>
+
+  <!-- Crema swirl details -->
+  <path d="M 165 194 Q 185 190 200 195 Q 215 200 235 196"
+        fill="none" stroke="rgba(180,120,60,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 170 198 Q 188 194 205 197 Q 218 200 230 197"
+        fill="none" stroke="rgba(200,140,70,0.4)" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Crema highlight -->
+  <ellipse cx="183" cy="193" rx="22" ry="4" fill="rgba(220,160,80,0.5)" transform="rotate(-10,183,193)"/>
+  <ellipse cx="178" cy="192" rx="10" ry="2" fill="rgba(240,190,120,0.6)" transform="rotate(-10,178,192)"/>
+
+  <!-- Crema dark ring edge -->
+  <ellipse cx="200" cy="196" rx="58" ry="9.5" fill="none" stroke="rgba(80,35,10,0.5)" stroke-width="1"/>
+
+  <!-- ===================== STEAM ===================== -->
+  <g opacity="0.55" filter="url(#steamBlur)">
+    <!-- Steam strand 1 -->
+    <path d="M 185 175 Q 180 160 186 148 Q 192 136 187 122 Q 183 110 189 98"
+          fill="none" stroke="rgba(200,200,200,0.9)" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Steam strand 2 -->
+    <path d="M 200 172 Q 206 156 200 143 Q 194 130 200 117 Q 205 104 200 90"
+          fill="none" stroke="rgba(200,200,200,0.85)" stroke-width="3" stroke-linecap="round"/>
+    <!-- Steam strand 3 -->
+    <path d="M 215 174 Q 220 159 214 146 Q 208 133 214 119 Q 219 106 213 93"
+          fill="none" stroke="rgba(200,200,200,0.8)" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Steam lighter layer -->
+  <g opacity="0.3" filter="url(#steamBlur)">
+    <path d="M 185 170 Q 179 153 185 140 Q 191 127 185 112"
+          fill="none" stroke="white" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 200 168 Q 207 152 200 138 Q 193 124 200 108"
+          fill="none" stroke="white" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 215 170 Q 221 154 215 140 Q 209 126 215 110"
+          fill="none" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===================== CUP BOTTOM EDGE ===================== -->
+  <!-- Base ring of cup sitting on saucer -->
+  <ellipse cx="200" cy="348" rx="55" ry="8" fill="#d8d0c8"/>
+  <ellipse cx="200" cy="348" rx="55" ry="8" fill="none" stroke="#c0b8b0" stroke-width="1"/>
+  <!-- Base highlight -->
+  <ellipse cx="183" cy="345" rx="20" ry="3" fill="rgba(255,255,255,0.5)" transform="rotate(-5,183,345)"/>
+
+  <!-- ===================== FINAL POLISH ===================== -->
+  <!-- Global gloss overlay on cup -->
+  <path d="M 148 230 Q 145 280 148 328 Q 155 342 172 348 L 162 340 Q 150 332 150 320 L 152 228 Z"
+        fill="rgba(255,255,255,0.06)"/>
+
+</svg>
