@@ -60,11 +60,35 @@ const sections = [
   },
   {
     num: '6',
+    title: 'In-App Purchases & Subscriptions',
+    content: (
+      <>
+        <p>Caffinity offers optional auto-renewable subscriptions — <strong style={{ color: '#F5E6D0' }}>Caffinity Premium (Monthly)</strong> and <strong style={{ color: '#F5E6D0' }}>Caffinity Premium (Annual)</strong> — that unlock premium features. These are billed entirely through the Apple App Store.</p>
+        <ul style={{ listStyle: 'disc', paddingLeft: '20px', color: '#B8967A', fontSize: '0.9rem', marginTop: '12px' }}>
+          <li>Payment is charged to your Apple ID account at confirmation of purchase.</li>
+          <li>Subscriptions auto-renew unless auto-renew is turned off at least 24 hours before the end of the current period.</li>
+          <li>Your account will be charged for renewal within 24 hours prior to the end of the current period, at the price you agreed to.</li>
+          <li>You can manage or cancel your subscription anytime in <strong style={{ color: '#F5E6D0' }}>Apple ID Account Settings</strong> (Settings → [Your Name] → Subscriptions on iOS) — cancellation isn't possible directly through Caffinity since billing is handled entirely by Apple.</li>
+          <li>Any unused portion of a free trial period (if offered) is forfeited when you purchase a subscription.</li>
+        </ul>
+        <div className="highlight-orange" style={{ marginTop: '14px' }}>
+          📄 <strong>Full Terms of Use (End User License Agreement):</strong>{' '}
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener" style={{ color: '#E8A85A', textDecoration: 'underline' }}>
+            apple.com/legal/internet-services/itunes/dev/stdeula
+          </a>
+        </div>
+        <p style={{ marginTop: '14px' }}>Purchases are subject to Apple's own terms and refund policies. Caffinity does not process payments, store payment details, or have access to your card or Apple ID information.</p>
+        <div className="highlight-green" style={{ marginTop: '12px' }}>✅ <strong>No personal or financial data from the transaction is collected or stored by Caffinity itself</strong> — consistent with our no-data-collection approach described above.</div>
+      </>
+    ),
+  },
+  {
+    num: '7',
     title: "Children's Privacy",
     content: <p>Caffinity is not directed at children under 13. We collect no personal information from any user. Contact <a href="mailto:atifbosan63@gmail.com" style={{ color: '#E8A85A' }}>atifbosan63@gmail.com</a> to request deletion of any contact form messages.</p>,
   },
   {
-    num: '7',
+    num: '8',
     title: 'Contact Us',
     content: (
       <>
@@ -81,6 +105,7 @@ const summaryPoints = [
   { icon: '🚫', title: 'No Data Sharing', desc: 'Never shared with anyone' },
   { icon: '🌐', title: 'Works Offline', desc: 'No account needed' },
   { icon: '🎯', title: 'No Ads. Ever.', desc: 'Free, zero advertisements' },
+  { icon: '🔒', title: 'Secure Payments', desc: 'Handled entirely by Apple, no card data touches our app' },
 ]
 
 export default function Privacy() {
@@ -106,7 +131,7 @@ export default function Privacy() {
               Privacy Policy
             </h1>
             <p style={{ color: '#7A6050', fontSize: '0.85rem', marginBottom: '12px' }}>
-              Effective: January 1, 2025 &nbsp;·&nbsp; Last Updated: May 22, 2025
+              Effective: January 1, 2025 &nbsp;·&nbsp; Last Updated: September 14, 2026
             </p>
             <p style={{ color: '#B8967A', fontSize: '1rem', maxWidth: '500px', margin: '0 auto' }}>
               Caffinity is built on a simple principle: <strong style={{ color: '#F5E6D0' }}>your health data is yours.</strong> We do not collect it, store it in the cloud, or share it with anyone.
