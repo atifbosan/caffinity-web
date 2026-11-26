@@ -19,6 +19,8 @@ const sections = [
         <p style={{ marginTop: '14px' }}>The following data exists <strong>only on your local device</strong>:</p>
         <ul style={{ listStyle: 'disc', paddingLeft: '20px', color: '#B8967A', fontSize: '0.9rem', marginTop: '10px' }}>
           <li>Your name, daily caffeine limit and sensitivity preference</li>
+          <li>Optional profile details — age, body weight, sex, bedtime and wake time — used only to personalise your caffeine estimates</li>
+          <li>Water intake logs</li>
           <li>Drink logs, timestamps, and caffeine amounts</li>
           <li>XP points, streak counts, badges, and level progress</li>
           <li>Theme selection, custom drinks, and schedule settings</li>
@@ -55,21 +57,48 @@ const sections = [
       <ul style={{ listStyle: 'disc', paddingLeft: '20px', color: '#B8967A', fontSize: '0.9rem' }}>
         <li><strong style={{ color: '#F5E6D0' }}>Local Storage</strong> — To save your logs, settings, and progress on-device.</li>
         <li><strong style={{ color: '#F5E6D0' }}>Local Notifications (optional)</strong> — Device-only reminders. No external push server.</li>
+        <li><strong style={{ color: '#F5E6D0' }}>Apple Health / Health Connect (optional)</strong> — See section 6.</li>
       </ul>
     ),
   },
   {
     num: '6',
+    title: 'Apple Health & Health Connect',
+    content: (
+      <>
+        <p>Health integration is <strong style={{ color: '#F5E6D0' }}>optional</strong> and only works if you grant permission.</p>
+        <ul style={{ listStyle: 'disc', paddingLeft: '20px', color: '#B8967A', fontSize: '0.9rem', marginTop: '10px' }}>
+          <li><strong style={{ color: '#F5E6D0' }}>Written to Health:</strong> the caffeine and water intake you log, so it appears with your other nutrition data.</li>
+          <li><strong style={{ color: '#F5E6D0' }}>Read from Health:</strong> your sleep data (asleep, awake and in-bed time), used only on your device to personalise your caffeine cutoff and wellness badges.</li>
+        </ul>
+        <div className="highlight-green" style={{ marginTop: '12px' }}>✅ <strong>Health data is never used for advertising, never sold, and never shared with third parties.</strong></div>
+        <p style={{ marginTop: '12px' }}>You can change or revoke access at any time in the Health app (iOS) or Health Connect settings (Android). Caffinity provides informational estimates for general wellness only and is not a medical device.</p>
+      </>
+    ),
+  },
+  {
+    num: '7',
+    title: 'Widgets & Apple Watch',
+    content: <p>Home Screen widgets and the Apple Watch app show your caffeine and water totals. These numbers are passed between the app, its widgets and your paired Apple Watch <strong style={{ color: '#F5E6D0' }}>on your own devices only</strong>, using Apple's on-device App Groups and Watch Connectivity. Nothing is sent to a server.</p>,
+  },
+  {
+    num: '8',
+    title: 'Sharing & Exporting',
+    content: <p>When you choose to share a badge or weekly summary, or export your data as CSV or PDF, the file is created on your device and handed to your system share sheet. Where it goes next is entirely your choice — nothing is shared automatically.</p>,
+  },
+  {
+    num: '9',
     title: 'In-App Purchases & Subscriptions',
     content: (
       <>
-        <p>Caffinity offers optional auto-renewable subscriptions — <strong style={{ color: '#F5E6D0' }}>Caffinity Premium (Monthly)</strong> and <strong style={{ color: '#F5E6D0' }}>Caffinity Premium (Annual)</strong> — that unlock premium features. These are billed entirely through the Apple App Store.</p>
+        <p>Caffinity offers optional auto-renewable subscriptions — <strong style={{ color: '#F5E6D0' }}>Caffinity Premium (Monthly)</strong> and <strong style={{ color: '#F5E6D0' }}>Caffinity Premium (Annual)</strong> — that unlock premium features. These are billed entirely through the Apple App Store on iOS, or Google Play on Android.</p>
         <ul style={{ listStyle: 'disc', paddingLeft: '20px', color: '#B8967A', fontSize: '0.9rem', marginTop: '12px' }}>
           <li>Payment is charged to your Apple ID account at confirmation of purchase.</li>
           <li>Subscriptions auto-renew unless auto-renew is turned off at least 24 hours before the end of the current period.</li>
           <li>Your account will be charged for renewal within 24 hours prior to the end of the current period, at the price you agreed to.</li>
           <li>You can manage or cancel your subscription anytime in <strong style={{ color: '#F5E6D0' }}>Apple ID Account Settings</strong> (Settings → [Your Name] → Subscriptions on iOS) — cancellation isn't possible directly through Caffinity since billing is handled entirely by Apple.</li>
           <li>Any unused portion of a free trial period (if offered) is forfeited when you purchase a subscription.</li>
+          <li>On Android, subscriptions are billed and managed by Google Play (Play Store → Payments &amp; subscriptions).</li>
         </ul>
         <div className="highlight-orange" style={{ marginTop: '14px' }}>
           📄 <strong>Full Terms of Use (End User License Agreement):</strong>{' '}
@@ -77,23 +106,23 @@ const sections = [
             apple.com/legal/internet-services/itunes/dev/stdeula
           </a>
         </div>
-        <p style={{ marginTop: '14px' }}>Purchases are subject to Apple's own terms and refund policies. Caffinity does not process payments, store payment details, or have access to your card or Apple ID information.</p>
+        <p style={{ marginTop: '14px' }}>Purchases are subject to Apple's or Google's own terms and refund policies. Caffinity does not process payments, store payment details, or have access to your card or Apple ID information.</p>
         <div className="highlight-green" style={{ marginTop: '12px' }}>✅ <strong>No personal or financial data from the transaction is collected or stored by Caffinity itself</strong> — consistent with our no-data-collection approach described above.</div>
       </>
     ),
   },
   {
-    num: '7',
+    num: '10',
     title: "Children's Privacy",
     content: <p>Caffinity is not directed at children under 13. We collect no personal information from any user. Contact <a href="mailto:atifbosan63@gmail.com" style={{ color: '#E8A85A' }}>atifbosan63@gmail.com</a> to request deletion of any contact form messages.</p>,
   },
   {
-    num: '8',
+    num: '11',
     title: 'Contact Us',
     content: (
       <>
         <p><strong style={{ color: '#F5E6D0' }}>Email:</strong> <a href="mailto:atifbosan63@gmail.com" style={{ color: '#E8A85A' }}>atifbosan63@gmail.com</a></p>
-        <p style={{ marginTop: '10px', color: '#E8A85A', cursor: 'pointer', fontSize: '0.9rem' }}>→ Contact &amp; Support Page</p>
+        <p style={{ marginTop: '10px', color: '#E8A85A', cursor: 'pointer', fontSize: '0.9rem' }} onClick={() => window.location.assign('/contact')}>→ Contact &amp; Support Page</p>
       </>
     ),
   },
@@ -105,7 +134,7 @@ const summaryPoints = [
   { icon: '🚫', title: 'No Data Sharing', desc: 'Never shared with anyone' },
   { icon: '🌐', title: 'Works Offline', desc: 'No account needed' },
   { icon: '🎯', title: 'No Ads. Ever.', desc: 'Free, zero advertisements' },
-  { icon: '🔒', title: 'Secure Payments', desc: 'Handled entirely by Apple, no card data touches our app' },
+  { icon: '🔒', title: 'Secure Payments', desc: 'Handled by Apple or Google, no card data touches our app' },
 ]
 
 export default function Privacy() {
@@ -131,7 +160,7 @@ export default function Privacy() {
               Privacy Policy
             </h1>
             <p style={{ color: '#7A6050', fontSize: '0.85rem', marginBottom: '12px' }}>
-              Effective: January 1, 2025 &nbsp;·&nbsp; Last Updated: September 14, 2026
+              Effective: January 1, 2025 &nbsp;·&nbsp; Last Updated: November 26, 2026
             </p>
             <p style={{ color: '#B8967A', fontSize: '1rem', maxWidth: '500px', margin: '0 auto' }}>
               Caffinity is built on a simple principle: <strong style={{ color: '#F5E6D0' }}>your health data is yours.</strong> We do not collect it, store it in the cloud, or share it with anyone.
