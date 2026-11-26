@@ -122,7 +122,7 @@ const sections = [
     content: (
       <>
         <p><strong style={{ color: '#F5E6D0' }}>Email:</strong> <a href="mailto:atifbosan63@gmail.com" style={{ color: '#E8A85A' }}>atifbosan63@gmail.com</a></p>
-        <p style={{ marginTop: '10px', color: '#E8A85A', cursor: 'pointer', fontSize: '0.9rem' }} onClick={() => window.location.assign('/contact')}>→ Contact &amp; Support Page</p>
+        <p style={{ marginTop: '10px', color: '#E8A85A', cursor: 'pointer', fontSize: '0.9rem' }} onClick={() => window.location.assign(import.meta.env.BASE_URL + 'contact')}>→ Contact &amp; Support Page</p>
       </>
     ),
   },
