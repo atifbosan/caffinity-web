@@ -8,7 +8,7 @@ import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '') || '/'}>
       <ScrollToTop />
       <Navbar />
       <Routes>
